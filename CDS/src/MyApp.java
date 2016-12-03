@@ -6,7 +6,7 @@
  * MAIN CLASS
  * This class extends JFrame and contains instances of all of the panels represented by classes in this project.
  * This class also contains a glass panel that is used for drawing on top of Java Swing components
- * This class uses a cardlayout, which makes it simple to swap new screens in and out. hi
+ * This class uses a cardlayout, which makes it simple to swap new screens in and out.
 ***/
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
