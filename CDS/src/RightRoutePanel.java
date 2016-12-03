@@ -3,6 +3,7 @@
  * Brian Carducci, Troy Ingel
  * Insulin Administration Clinical Decision Support System
  * SER360
+ * This class creates a panel that instructs the user on how to identify the proper route for injection
 ***/
 import java.awt.BorderLayout;
 import java.awt.CardLayout;

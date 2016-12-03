@@ -1,3 +1,13 @@
+
+/***
+ * Brian Carducci, Troy Ingel
+ * Insulin Administration Clinical Decision Support System
+ * SER360
+ * MAIN CLASS
+ * This class extends JFrame and contains instances of all of the panels represented by classes in this project.
+ * This class also contains a glass panel that is used for drawing on top of Java Swing components
+ * This class uses a cardlayout, which makes it simple to swap new screens in and out.
+***/
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -62,7 +72,7 @@ public class MyApp extends JFrame {
 
 	// constructor
 	public MyApp() {
-		//initialize the panels
+		// initialize the panels
 		login = new LoginPanel();
 		glucose = new GlucoseLevelPanel();
 		insulin = new InjectInsulinPanel();
@@ -76,9 +86,9 @@ public class MyApp extends JFrame {
 		bottle = new PrepareBottlePanel();
 		needle = new PrepareNeedlePanel();
 		summary = new SummaryPanel();
-		//set up card layout
+		// set up card layout
 		container.setLayout(card);
-		//set some initial values for the frame
+		// set some initial values for the frame
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		setTitle("Insulin Administration");
 		setLocationRelativeTo(null);
@@ -86,7 +96,7 @@ public class MyApp extends JFrame {
 		setResizable(false);
 		setFocusable(true);
 		setVisible(true);
-		//add panels to the card layout
+		// add panels to the card layout
 		container.add(login, "1");
 		container.add(glucose, "2");
 		container.add(rightPatient, "3");
@@ -99,16 +109,16 @@ public class MyApp extends JFrame {
 		container.add(insulin, "10");
 		container.add(document, "11");
 		container.add(summary, "12");
-		//add container to the frame
+		// add container to the frame
 		add(container);
-		//show the first screen (login)
+		// show the first screen (login)
 		card.show(container, "1");
-		//create the glass pane and add it to the frame
+		// create the glass pane and add it to the frame
 		glassPane = new MyGlassPane();
 		setGlassPane(glassPane);
 		glassPane.setVisible(false);
 		glassPane.setOpaque(false);
-		//create ellipses for injection locations
+		// create ellipses for injection locations
 		Shape ellipse1 = new Ellipse2D.Double(980, 360, 50, 50);
 		Shape ellipse2 = new Ellipse2D.Double(1135, 360, 50, 50);
 		Shape ellipse3 = new Ellipse2D.Double(765, 440, 50, 50);
@@ -116,7 +126,7 @@ public class MyApp extends JFrame {
 		Shape ellipse5 = new Ellipse2D.Double(812, 560, 50, 50);
 		Shape ellipse6 = new Ellipse2D.Double(1025, 535, 50, 50);
 		Shape ellipse7 = new Ellipse2D.Double(1102, 535, 50, 50);
-		//add ellipses to the list
+		// add ellipses to the list
 		ellipses.add(ellipse1);
 		ellipses.add(ellipse2);
 		ellipses.add(ellipse3);
@@ -127,7 +137,7 @@ public class MyApp extends JFrame {
 
 		setResizable(true);
 		showingCardPanel = 1;
-		//set up the next and back buttons
+		// set up the next and back buttons
 		backButton = new JButton("Back");
 		nextButton = new JButton("Next");
 		backButton.setVisible(false);
@@ -138,21 +148,22 @@ public class MyApp extends JFrame {
 		nextButton.setPreferredSize(new Dimension(300, 50));
 		backButton.setFont(new Font("Serif", Font.PLAIN, 50));
 		nextButton.setFont(new Font("Serif", Font.PLAIN, 50));
-		//create title
+		// create title
 		title = new JLabel();
 		title.setFont(new Font("Serif", Font.BOLD, 75));
 		title.setHorizontalAlignment(JLabel.CENTER);
 
 		buttonPanel.setLayout(new BorderLayout());
-		//set up the layout of the panels
+		// set up the layout of the panels
 		buttonPanel.add(backButton, BorderLayout.WEST);
 		buttonPanel.add(nextButton, BorderLayout.EAST);
 		buttonPanel.add(title, BorderLayout.CENTER);
 		mainPanel.setLayout(new BorderLayout());
 		mainPanel.add(container, BorderLayout.CENTER);
 		mainPanel.add(buttonPanel, BorderLayout.NORTH);
-		//add mouselistener to back button, that sets the card layout to previous panel
-		//when clicked
+		// add mouselistener to back button, that sets the card layout to
+		// previous panel
+		// when clicked
 		backButton.addMouseListener(new MouseListener() {
 
 			@Override
@@ -184,8 +195,9 @@ public class MyApp extends JFrame {
 			}
 
 		});
-		//add mouselistener to next button, that sets the card layout to next panel
-		//when clicked
+		// add mouselistener to next button, that sets the card layout to next
+		// panel
+		// when clicked
 		nextButton.addMouseListener(new MouseListener() {
 
 			@Override
@@ -218,17 +230,19 @@ public class MyApp extends JFrame {
 			}
 
 		});
-		//add main panel to
+		// add main panel to
 		add(mainPanel);
 	}
-//main
+
+	// main
 	public static void main(String[] args) {
 		new MyApp();
 	}
-/**
- * Method that is responsible for checking to see if the glass pane, back button and
- * next button should be visable or not
- **/
+
+	/**
+	 * Method that is responsible for checking to see if the glass pane, back
+	 * button and next button should be visable or not
+	 **/
 	public static void handleButtonPanel(String direction) {
 
 		nextButton.setVisible(true);

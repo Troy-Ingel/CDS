@@ -3,6 +3,9 @@
  * Brian Carducci, Troy Ingel
  * Insulin Administration Clinical Decision Support System
  * SER360
+ * This class creates a panel that contains combo boxes for selecting the time and date, an image
+ * to select the injection site, a checkbox to indicate if the patient accepted the drug and a place for
+ * the user to enter in notes
 ***/
 import java.awt.BorderLayout;
 import java.awt.Color;

@@ -3,6 +3,8 @@
  * Brian Carducci, Troy Ingel
  * Insulin Administration Clinical Decision Support System
  * SER360
+ * This class creates a panel that instructs the user on how to properly inject a patient with a needle
+ * containing insulin
 ***/
 import java.awt.BorderLayout;
 import java.awt.CardLayout;

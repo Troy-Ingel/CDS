@@ -3,6 +3,7 @@
  * Brian Carducci, Troy Ingel
  * Insulin Administration Clinical Decision Support System
  * SER360
+ * This class creates a panel that displays a summary of the events taken place in the process
 ***/
 import java.awt.Font;
 import java.awt.Shape;

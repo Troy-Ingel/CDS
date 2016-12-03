@@ -3,6 +3,7 @@
  * Brian Carducci, Troy Ingel
  * Insulin Administration Clinical Decision Support System
  * SER360
+ * This class creates a panel that promps the user to enter in a username and password
 ***/
 
 import java.awt.BorderLayout;

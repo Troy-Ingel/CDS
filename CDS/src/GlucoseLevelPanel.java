@@ -3,6 +3,8 @@
  * Brian Carducci, Troy Ingel
  * Insulin Administration Clinical Decision Support System
  * SER360
+ * This class creates a panel that instructs the user on how to test for glucose levels,
+ * and also displays a sliding scale of blood glucose levels to units of insulin
 ***/
 
 import java.awt.Color;
